@@ -37,6 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'booking',
+    'guideBardApp',
+    'area_based_tour_guides',
+    'contacts',
+    'payments',
+    'reviews',
+    'tour_guides',
+    'tourist_spots',
+    'tourists',
 ]
 
 MIDDLEWARE = [
