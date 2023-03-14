@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import django.contrib.auth.views as auth_views
+from guideBardApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.homePage, name='home'),
+    path('sign-up/', views.signUp, name='sign-up'),
+    path('login/', auth_views.LoginView.as_view(template_name="login.html"), name='login'),
+    path('contacts/', views.contacts, name='contacts'),
+    path('reviews/', views.reviews, name='reviews'),
+    path('payment/', views.payment, name='payment'),
+    path('profile/', views.profile, name='profile'),
+    path('tour-guides/', views.tourGuide, name='guides'),
 ]
