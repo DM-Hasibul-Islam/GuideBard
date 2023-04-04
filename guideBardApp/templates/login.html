@@ -2,120 +2,122 @@
 {% load crispy_forms_tags %}
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Multi User Login</title>
-	<!-- style -->
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Multi User Login</title>
+    <!-- style -->
+    <!-- link rel="stylesheet" type="text/css" href="style.css" -->
 </head>
 <style>
-    body{
-    background-color:#FFF0F5;
-	font-family: consolas,sans-serif;
+    body {
+        background-color: #FFF0F5;
+        font-family: consolas, sans-serif;
 
-}
+    }
 
-.form-login{
-	left: 50%;
-	top: 50%;
-	position: absolute;
-	 -webkit-transform: translate3d(-50%, -50%, 0);
-    -moz-transform: translate3d(-50%, -50%, 0);
-    transform: translate3d(-50%, -50%, 0);
-    width: 400px;
-    border: 12px #a3d2ca;
-    background-color: #F0F8FF;
-    border-radius: 10px;
-    padding: 30px;
-    margin: 15px;
-    box-shadow: 10px 10px #ADD8E6;
-}
+    .form-login {
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        -moz-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        width: 400px;
+        border: 12px #a3d2ca;
+        background-color: #F0F8FF;
+        border-radius: 10px;
+        padding: 30px;
+        margin: 15px;
+        box-shadow: 10px 10px #ADD8E6;
+    }
 
-.lead{
-	text-align: center;
-	color: grey;
-	font-family: serif;
-	font-size: 20pt;
-}
+    .lead {
+        text-align: center;
+        color: grey;
+        font-family: serif;
+        font-size: 20pt;
+    }
 
-input[type=text], input[type=password]{
-	width: 385px;
-	border-radius: 4px;
-	padding: 12px;
-	text-align: center;
-	left: 50%;
-	margin-top: 10px;
-	margin-right: 20px;
-	display: inline-block;
-}
+    input[type=text], input[type=password] {
+        width: 385px;
+        border-radius: 4px;
+        padding: 12px;
+        text-align: center;
+        left: 50%;
+        margin-top: 10px;
+        margin-right: 20px;
+        display: inline-block;
+    }
 
-input[type=submit]{
-	width: 400px;
-	border-radius: 4px;
-	padding: 12px;
-	background-color: #16c79a;
-	border: 10px #16c79a;
-	text-align: center;
-	left: 50%;
-	margin-top: 10px;
-	margin-right: 20px;
-	display: inline-block;
-}
-button {
-  background-color: #5F9EA0;
-  color: white;
-  padding: 15px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 103%;
-}
+    input[type=submit] {
+        width: 400px;
+        border-radius: 4px;
+        padding: 12px;
+        background-color: #16c79a;
+        border: 10px #16c79a;
+        text-align: center;
+        left: 50%;
+        margin-top: 10px;
+        margin-right: 20px;
+        display: inline-block;
+    }
 
-button:hover {
-  opacity: 0.8;
-}
+    button {
+        background-color: #5F9EA0;
+        color: white;
+        padding: 15px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 103%;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
 
 
-select {
-	width: 410px;
-	border-radius: 4px;
-	padding: 12px;
-	text-align: center;
-	left: 50%;
-	margin-top: 10px;
-	margin-right: 20px;
-	display: inline-block;
-}
-label{
-	margin-bottom: 10pt;
-}
+    select {
+        width: 410px;
+        border-radius: 4px;
+        padding: 12px;
+        text-align: center;
+        left: 50%;
+        margin-top: 10px;
+        margin-right: 20px;
+        display: inline-block;
+    }
+
+    label {
+        margin-bottom: 10pt;
+    }
 </style>
 <body bgcolor="">
 
-	<div class="form-login">
-		<p class="lead">Login</p>
-		{% if messages %}
-            {% for message in messages %}
-                {{ message }}
-            {% endfor %}
+<div class="form-login">
+    <p class="lead">Login</p>
+    {% if messages %}
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+    {% endif %}
+    <form action="" method="POST">
+        <!--
+            <select>
+                    <option></option>
+                    <option>Patient</option>
+                    <option>Doctor</option>
+            </select>
+        -->
+        {% csrf_token %}
+        {% if error %}
+        {{ error }}
         {% endif %}
-		<form action="" method="POST">
-	<!--
-		<select>
-				<option></option>
-				<option>Patient</option>
-				<option>Doctor</option>
-		</select>
-	-->
-   			 {% csrf_token %}
-			{% if error %}
-				{{ error }}
-				{% endif %}
-    		{{ form|crispy }}
-    		<button class="btn btn-primary" type="submit">Login</button>
- 		 </form>
+        {{ form | crispy }}
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
 
 
-		</div>
+</div>
 </body>
 </html>

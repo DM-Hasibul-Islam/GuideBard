@@ -5,7 +5,7 @@ from django.forms.formsets import formset_factory
 from django.contrib.auth import settings, logout
 from django.contrib.auth.models import User
 
-from guideBardApp.forms import register_form
+#from guideBardApp.forms import register_form
 
 
 def homePage(request):
@@ -68,7 +68,7 @@ def logout_request(request):
 
 def register(request):
     if request.method == "POST":
-        form = register_form(request.POST)
+        form = AuthenticationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request)
@@ -77,5 +77,5 @@ def register(request):
         else:
             messages.error(request, "Unsuccessful registration. Invalid information.")
     else:
-            form = register_form()
+            form = AuthenticationForm()
             return render(request=request, template_name="sign_up.html", context={"register_form": form})

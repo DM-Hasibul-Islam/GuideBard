@@ -8,12 +8,12 @@
 </head>
 <style>
 body{
-    background-color:;
+    background-color: #a3d2ca;
 	font-family: consolas,serif;
 }
 
 .form-register{
-    width: cover;
+    width: auto ;
     border: 12px #a3d2ca;
     background-color: #F0F8FF;
     border-radius: 10px;
@@ -30,7 +30,7 @@ body{
 }
 
 input[type=submit]{
-	text-align: center
+	text-align: center;
 	width: 400px;
 	border-radius: 4px;
 	padding: 5px;
@@ -88,7 +88,7 @@ label{
 		</select>
 	-->
    			 {% csrf_token %}
-    		 {{ register_form }}
+    		 {{ AuthenticationForm }}
     		<button class="input" type="submit">Sign Up</button>
  		 </form>
 		</div>
