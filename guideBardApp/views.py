@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 def homePage(request):
     return render(request, 'home.html')
 
-
+#For Sign up
 def signUp(request):
     return render(request, 'sign-up.html')
 
