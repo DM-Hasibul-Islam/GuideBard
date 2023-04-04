@@ -111,7 +111,7 @@ label{
 			{% if error %}
 				{{ error }}
 				{% endif %}
-    		{{ form }}
+    		{{ form|crispy }}
     		<button class="btn btn-primary" type="submit">Login</button>
  		 </form>
 

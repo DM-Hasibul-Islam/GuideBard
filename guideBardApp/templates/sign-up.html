@@ -1,10 +1,96 @@
 <!DOCTYPE html>
+{% load crispy_forms_tags %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Register</title>
 </head>
-<body>
+<style>
+body{
+    background-color:;
+	font-family: consolas,serif;
+}
 
+.form-register{
+    width: cover;
+    border: 12px #a3d2ca;
+    background-color: #F0F8FF;
+    border-radius: 10px;
+    padding: 0px;
+    margin: 15px;
+    box-shadow: 10px 10px #ADD8E6;
+}
+
+.lead{
+	text-align: center;
+	color: grey;
+	font-family: serif;
+	font-size: 15pt;
+}
+
+input[type=submit]{
+	text-align: center
+	width: 400px;
+	border-radius: 4px;
+	padding: 5px;
+	background-color: #16c79a;
+	border: 10px #16c79a;
+	text-align: center;
+	left: 50%;
+	margin-top: 10px;
+	margin-right: 20px;
+	display: inline-block;
+}
+button {
+  background-color: #5F9EA0;
+  color: white;
+  padding: 12px 18px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+select {
+	width: 400px;
+	border-radius: 4px;
+	padding: 0px;
+	text-align: center;
+	left: 50%;
+	margin-top: 10px;
+	margin-right: 20px;
+	display: inline-block;
+}
+label{
+	margin-bottom: 10pt;
+}
+</style>
+<body bgcolor="">
+
+	<div class="form-register">
+		<p class="lead">Sign Up</p>
+		{% if messages %}
+		{% for message in messages %}
+		{{ message }}
+		{% endfor %}
+        {% endif %}
+		<form action="" method='POST'>
+    <!--    <select>
+				<option></option>
+				<option>Patient</option>
+				<option>Doctor</option>
+		</select>
+	-->
+   			 {% csrf_token %}
+    		 {{ register_form }}
+    		<button class="input" type="submit">Sign Up</button>
+ 		 </form>
+		</div>
 </body>
 </html>
