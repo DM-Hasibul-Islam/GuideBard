@@ -1,96 +1,121 @@
-<!DOCTYPE html>
-{% load crispy_forms_tags %}
-<html lang="en">
+{% extends 'base.html' %}
+{% block title %}
+    Sign Up
+{% endblock title %}
+{% block content %}
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Register</title>
-</head>
+	{% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">/
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-body{
-    background-color:;
-	font-family: consolas,serif;
-}
+	section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+	}
+	.signup-form {
+		width: 500px;
+		margin: 0 auto;
+		padding: 30px 0;
+		background: transparent;
+	}
+    .signup-form h2 {
+		color: white;
+        margin: 0 0 30px 0;
+		display: inline-block;
+		padding: 0 30px 10px 0;
+    }
+    .signup-form form {
+		color: white;
+		border-radius: 3px;
+    	margin-bottom: 15px;
+        background: transparent;
+        padding: 30px;
 
-.form-register{
-    width: cover;
-    border: 12px #a3d2ca;
-    background-color: #F0F8FF;
-    border-radius: 10px;
-    padding: 0px;
-    margin: 15px;
-    box-shadow: 10px 10px #ADD8E6;
-}
+    }
 
-.lead{
-	text-align: center;
-	color: grey;
-	font-family: serif;
-	font-size: 15pt;
-}
-
-input[type=submit]{
-	text-align: center
-	width: 400px;
-	border-radius: 4px;
-	padding: 5px;
-	background-color: #16c79a;
-	border: 10px #16c79a;
-	text-align: center;
-	left: 50%;
-	margin-top: 10px;
-	margin-right: 20px;
-	display: inline-block;
-}
-button {
-  background-color: #5F9EA0;
-  color: white;
-  padding: 12px 18px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-
-select {
-	width: 400px;
-	border-radius: 4px;
-	padding: 0px;
-	text-align: center;
-	left: 50%;
-	margin-top: 10px;
-	margin-right: 20px;
-	display: inline-block;
-}
-label{
-	margin-bottom: 10pt;
-}
+    .signup-form input[type="checkbox"] {
+		margin-top: 2px;
+		 background: transparent;
+	}
+    .signup-form .btn {
+		width: 100%;
+		height: 40px;
+    	border-radius: 40px;
+		background: #a3cfbb;
+    	border: none;
+    	outline: none;
+    	cursor: pointer;
+    	font-size: 1em;
+    	font-weight: 600;
+    }
+	.signup-form .btn:hover, .signup-form .btn:focus {
+		background: #41cba9;
+        outline: none !important;
+	}
+    .signup-form a {
+		color: #5cd3b4;
+		text-decoration: underline;
+	}
+	.signup-form a:hover {
+		text-decoration: none;
+	}
+    .signup-form form a {
+		color: #5cd3b4;
+		text-decoration: none;
+	}
 </style>
-<body bgcolor="">
-
-	<div class="form-register">
-		<p class="lead">Sign Up</p>
-		{% if messages %}
-		{% for message in messages %}
-		{{ message }}
-		{% endfor %}
-        {% endif %}
-		<form action="" method='POST'>
-    <!--    <select>
-				<option></option>
-				<option>Patient</option>
-				<option>Doctor</option>
-		</select>
-	-->
-   			 {% csrf_token %}
-    		 {{ register_form }}
-    		<button class="input" type="submit">Sign Up</button>
- 		 </form>
+</head>
+<body>
+<section>
+<div class="signup-form">
+    <form method="post" class="form-horizontal">
+		<div class="col-xs-8 col-xs-offset-4">
+			<h2>Sign Up</h2>
 		</div>
+        <div class="form-group">
+			<label class="control-label col-xs-4">Username</label>
+			<div class="col-xs-8">
+                <input type="text" class="form-control" name="username" required="required">
+            </div>
+        </div>
+		<div class="form-group">
+			<label class="control-label col-xs-4">Email Address</label>
+			<div class="col-xs-8">
+                <input type="email" class="form-control" name="email" required="required">
+            </div>
+        </div>
+		<div class="form-group">
+			<label class="control-label col-xs-4">Password</label>
+			<div class="col-xs-8">
+                <input type="password" class="form-control" name="password" required="required">
+            </div>
+        </div>
+		<div class="form-group">
+			<label class="control-label col-xs-4">Confirm Password</label>
+			<div class="col-xs-8">
+                <input type="password" class="form-control" name="confirm_password" required="required">
+            </div>
+        </div>
+		<div class="form-group">
+			<div class="col-xs-8 col-xs-offset-4">
+				<p><label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>.</label></p>
+				<button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+			</div>
+		</div>
+    </form>
+	<div class="text-center">Already have an account? <a href="#">Login here</a></div>
+</div>
+</section>
 </body>
-</html>
+{% endblock %}

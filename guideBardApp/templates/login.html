@@ -1,121 +1,160 @@
-<!DOCTYPE html>
-{% load crispy_forms_tags %}
-<html lang="en">
+{% extends 'base.html' %}
+{% block title %}
+    Login
+{% endblock title %}
+{% block content %}
 <head>
+	{% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Multi User Login</title>
-	<!-- style -->
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link href="http://infiniteiotdevices.com/images/logo.png" rel="icon" sizes="16x16" type="image/gif" />
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <style>
-    body{
-    background-color:#FFF0F5;
-	font-family: consolas,sans-serif;
-
+*{
+    margin: 0;
+    padding: 0;
 }
 
-.form-login{
-	left: 50%;
-	top: 50%;
-	position: absolute;
-	 -webkit-transform: translate3d(-50%, -50%, 0);
-    -moz-transform: translate3d(-50%, -50%, 0);
-    transform: translate3d(-50%, -50%, 0);
-    width: 400px;
-    border: 12px #a3d2ca;
-    background-color: #F0F8FF;
-    border-radius: 10px;
-    padding: 30px;
-    margin: 15px;
-    box-shadow: 10px 10px #ADD8E6;
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.form-box{
+
+    position: relative;
+    width: 500px;
+    height: 450px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+h2{
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+.inputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label{
+top: -5px;
+}
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding:0 35px 0 5px;
+    color: #fff;
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+.forget{
+    margin: -15px 0 15px ;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
 }
 
-.lead{
-	text-align: center;
-	color: grey;
-	font-family: serif;
-	font-size: 20pt;
+.forget label input{
+    margin-right: 3px;
+
+}
+.forget label a{
+    color: #fff;
+    text-decoration: none;
+}
+.forget label a:hover{
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #a3cfbb;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+.register{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
 }
 
-input[type=text], input[type=password]{
-	width: 385px;
-	border-radius: 4px;
-	padding: 12px;
-	text-align: center;
-	left: 50%;
-	margin-top: 10px;
-	margin-right: 20px;
-	display: inline-block;
-}
-
-input[type=submit]{
-	width: 400px;
-	border-radius: 4px;
-	padding: 12px;
-	background-color: #16c79a;
-	border: 10px #16c79a;
-	text-align: center;
-	left: 50%;
-	margin-top: 10px;
-	margin-right: 20px;
-	display: inline-block;
-}
-button {
-  background-color: #5F9EA0;
-  color: white;
-  padding: 15px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 103%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-
-select {
-	width: 410px;
-	border-radius: 4px;
-	padding: 12px;
-	text-align: center;
-	left: 50%;
-	margin-top: 10px;
-	margin-right: 20px;
-	display: inline-block;
-}
-label{
-	margin-bottom: 10pt;
-}
 </style>
-<body bgcolor="">
-
-	<div class="form-login">
-		<p class="lead">Login</p>
-		{% if messages %}
-            {% for message in messages %}
-                {{ message }}
-            {% endfor %}
-        {% endif %}
-		<form action="" method="POST">
-	<!--
-		<select>
-				<option></option>
-				<option>Patient</option>
-				<option>Doctor</option>
-		</select>
-	-->
-   			 {% csrf_token %}
-			{% if error %}
-				{{ error }}
-				{% endif %}
-    		{{ form|crispy }}
-    		<button class="btn btn-primary" type="submit">Login</button>
- 		 </form>
-
-
+</head>
+<body>
+	<section>
+		<div class="form-box">
+			<div class="form-value">
+				<form action="">
+					<h2>Login</h2>
+						<div class="inputbox">
+							<ion-icon name="mail-outline"></ion-icon>
+							<input type="email" required>
+							<label for="email">Email</label>
+						</div>
+					<div class="inputbox">
+						<ion-icon name="lock-closed-outline"></ion-icon>
+							<input type="password" required>
+							<label for="">Password</label>
+						</div>
+					<div class="forget">
+						<label for=""><input type="checkbox">Remember Me!</label>
+						<a href="#">Forget Password?</a>
+					</div>
+					<button>Log In</button>
+					<div class="register">
+						<p>Don't have an Account?<a href="{% url 'sign-up' %}">Register</a>
+					</div>
+				</form>
+			</div>
 		</div>
+	</section>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
-</html>
+{% endblock %}
