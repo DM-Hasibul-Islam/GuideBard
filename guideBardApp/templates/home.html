@@ -5,5 +5,34 @@
 {% endblock title %}
 
 {% block content %}
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .text-over-img {
+        z-index:1;
+        font-size: 3em;
+        margin-top: -100px;
+    }
+        .maintxt {
+    background-image: url("../static/img/2.jpg");
+    background-size: cover;
+}
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-8 col-centered">
+            <div class="maintxt">
+                My great text.
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 
 {% endblock %}
