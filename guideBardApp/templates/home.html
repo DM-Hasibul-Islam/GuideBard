@@ -1,38 +1,122 @@
 {% extends 'base.html' %}
-
 {% block title %}
-    HomePage
+   Tourist Spots
 {% endblock title %}
-
 {% block content %}
 <head>
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        .text-over-img {
-        z-index:1;
-        font-size: 3em;
-        margin-top: -100px;
-    }
-        .maintxt {
-    background-image: url("../static/img/2.jpg");
-    background-size: cover;
-}
-    </style>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+  <title>Bootstrap 5 Carousel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+  <title></title>
 </head>
+<style>
+
+.c-item {
+  height: 745px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+</style>
+
 <body>
 
+  <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-8 col-centered">
-            <div class="maintxt">
-                My great text.
-            </div>
-        </div>
     </div>
-</div>
-</body>
 
+    <div class="carousel-inner">
+      <div class="carousel-item active c-item">
+        <img src="../static/img/stmartin.jpg" class="d-block w-100 c-img" alt="Slide 1">
+         <div class="carousel-caption d-none d-md-block">
+        <h5>Saint Martin</h5>
+        <p>Saint Martin is the only coral island in Bangladesh. Exotic view of the sea, simple life style of the natives,
+            quiet, peaceful and full of enthusiasm made this island best tourist island of Bangladesh.</p>
+      </div>
+      </div>
+      <div class="carousel-item c-item">
+        <img src="../static/img/shundarban.jpg" class="d-block w-100 c-img" alt="Slide 2">
+        <div class="carousel-caption d-none d-md-block">
+        <h5>Shundarban</h5>
+        <p>Thousands of meandering streams, creeks, rivers and estuaries have enhanced its charm.
+            Sundarbans meaning beautiful forest is the natural habitat of the world famous Royal Bengal Tiger, spotted deer,
+            crocodiles, jungle fowl, wild boar, lizards, rhesus monkey and an innumerable variety of beautiful birds.</p>
+      </div>
+      </div>
+      <div class="carousel-item c-item">
+        <img src="../static/img/cox.jpg" class="d-block w-100 c-img" alt="Slide 3">
+        <div class="carousel-caption d-none d-md-block">
+        <h5>Cox's Bazar</h5>
+        <p>Cox's Bazar Beach is one of the longest uninterrupted natural sand beaches in all of Bangladesh.
+            Most of Cox's Bazar is 660 feet wide at high tide, and 1,300 feet wide at low tide.
+            This Bay of Bengal beach is quite unknown to the international beach-loving crowd.</p>
+      </div>
+
+      </div>
+      <div class="carousel-item c-item">
+        <img src="../static/img/bg4.jpg" class="d-block w-100 c-img" alt="Slide 4">
+       <div class="carousel-caption d-none d-md-block">
+        <h5>Nafa-Khum</h5>
+        <p>Ngafakhong (Native Marma Term) or Nafa-Khum to non-nasal soundpeople is a waterfall in Bangladesh on the Remaikree River,
+          a tributary of regrekhyong / Sangu river. It is among the biggest waterfalls in the nation by volume of water falling.
+          The wild uneven Remaikree River all of a sudden tumbles down here around 25-30 feet.</p>
+      </div>
+        </div>
+      <div class="carousel-item c-item">
+        <img src="../static/img/tanguar.jpg" class="d-block w-100 c-img" alt="Slide 5">
+        <div class="carousel-caption d-none d-md-block">
+       <h5>Tanguar Haor</h5>
+        <p>Tanguar Haor is a unique wetland ecosystem of national importance and has come into international focus.
+          The area of Tanguar haor including 46 villages within the haor is about 100 square kilometres
+          of which 2,802.36 ha² is wetland.</p>
+      </div>
+      </div>
+      <div class="carousel-item c-item">
+        <img src="../static/img/kuakata%20ea%20beach2.jpg" class="d-block w-100 c-img" alt="Slide 5">
+          <div class="carousel-caption d-none d-md-block">
+       <h5>Kuakata Seabeach</h5>
+        <p>Kuakata is one of the rarest places which has the unique beauty of offering the full view of the rising and
+          setting of crimson sun in the water of the Bay of Bengal in a calm environment.
+          That perhaps makes Kuakata one of the world's unique beaches.</p>
+      </div>
+      </div>
+      <div class="carousel-item c-item">
+        <img src="../static/img/sajek22.jpg" class="d-block w-100 c-img" alt="Slide 5">
+        <div class="carousel-caption d-none d-md-block">
+        <h5>Sajek</h5>
+        <p>Sajek is known for its natural environment and is surrounded by mountains, dense forest,
+          and grassland hill tracks. Many small rivers flow through the mountains among which the Kachalong
+          and the Machalong are notable. On the way to Sajek valley, one has to cross the Mayni range and the Mayni river.</p>
+      </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</body>
 {% endblock %}

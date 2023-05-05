@@ -2,8 +2,13 @@ from django.contrib import messages
 from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirect
 from django.contrib.auth import settings, logout
 
+
 def homePage(request):
     return render(request, 'home.html')
+
+
+def about(request):
+    return render(request, 'about.html')
 
 
 def signUp(request):
@@ -15,7 +20,7 @@ def login(request):
 
 
 def tourGuide(request):
-    return render(request, 'tour-guide.html')
+    return render(request, 'tour-guides.html')
 
 
 def reviews(request):
@@ -36,7 +41,6 @@ def payment(request):
 
 def tourist_spots(request):
     return render(request, 'tourist-spots.html')
-
 
 
 def register(request):

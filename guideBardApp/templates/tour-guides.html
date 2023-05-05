@@ -1,10 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block title %}
+    Tour Guides
+{% endblock title %}
+{% block content %}
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+body{
+  background-color: gray;
+  }
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 15px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+</style>
+  <title></title>
 </head>
 <body>
 
+
+
+<br>
+<div class="card-img-overlay">
+<div class="main">
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column">
+    <div class="content">
+      <img src="../static/img/afjal.jpeg" alt="Lights" style="width:100%">
+      <h3>Afjal Hossain</h3>
+      <p>Hello, everyone!.
+        I'm a Chittagong local and I'm here to show you the best places to go!
+        </p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="../static/img/afridy.jpeg" alt="Lights" style="width:100%">
+      <h3>Afridy khan</h3>
+      <p>I am a professional Tour Guide  to guide throughout
+         Dhaka providing quality private tours customized to your requirements.</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="../static/img/antim.jpeg" alt="Lights" style="width:100%">
+      <h3>Antim Kumar</h3>
+      <p>Hello, I've been a tour guide since 2006 and have guided thousands of people around Sylhet.</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="../static/img/hasib.jpg" alt="Mountains" style="width:100%">
+      <h3>Hasibul Islam</h3>
+      <p>Hi guys! My name is Hasibul. I was born in Bandarban, I would like to welcome & give you a nice tour in Bandarban.</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="../static/img/1%20(5).jpeg" alt="Mountains" style="width:100%">
+      <h3>Imrul Kayes</h3>
+      <p>Hi, my name is Imrul. As your guide, I'd love the opportunity to share my passion and enthusiasm for my beautiful city Patuakhali.</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="../static/img/rupol.jpeg" alt="Mountains" style="width:100%">
+      <h3>Rupol Hossain</h3>
+      <p>A Sunamganj, born and bred, I have lived here all my life and I,d love to explore the area with you!!</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="../static/img/1%20(6).jpeg" alt="Mountains" style="width:100%">
+      <h3>Siraj Islam</h3>
+      <p>A Sunamganj, born and bred, I have lived here all my life and I,d love to explore the area with you!!</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaHuKRxvQUGsuc4R8QlqhWhcX5shg2JFsvAw&usqp=CAU" alt="Mountains" style="width:100%">
+      <h3>Sumon khan</h3>
+      <p>Hi name is Sumon. I was born in St. martin, I would like to welcome you to St. martin & give you a nice tour.</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+  </div>
+</div>
 </body>
-</html>
+{% endblock %}

@@ -9,14 +9,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="/guideBardApp/templates/css/bootstrap.min.css">
 <style>
+::-webkit-scrollbar {
+    display: none;
+}
 .nav-link {
+;
 color: White !important;
 }
 .background-image {
     height: 100vh;
     width: 100vw;
     object-fit: cover;
-    background-image: url("../static/img/2.jpg");
     background-blend-mode: initial ;
     position:absolute;
     filter: brightness(0.6);
@@ -24,6 +27,7 @@ color: White !important;
 .nav.navbar-nav.navbar-right li a {
     color: blue;
 }
+
 </style>
     <title></title>
 
@@ -31,10 +35,10 @@ color: White !important;
 
 <body class="modal-fullscreen">
 
-<img class="background-image" src="https://images.unsplash.com/photo-1549300461-11c5b94e8855?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=100" alt="background-image"/>
+
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark-subtle fixed-top">
   <div class="container-fluid">
-      <a class="navbar-brand" href="">GudeBard</a>
+      <a class="navbar-brand">GυԃҽBαɾԃ</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -50,7 +54,10 @@ color: White !important;
           <a class="nav-link" href="{% url 'login' %}">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'tourist_spots' %}">Places You Can Visit</a>
+          <a class="nav-link" href="{% url 'guides' %}">Tour Guides</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About us</a>
         </li>
         <li class="nav-item"></li>
       </ul>
