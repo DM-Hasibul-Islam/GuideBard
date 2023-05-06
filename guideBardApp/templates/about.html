@@ -1,4 +1,67 @@
 {% extends 'base.html' %}
+
 {% block title %}
-   Tourist Spots
+    About
 {% endblock title %}
+
+{% block content %}
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <style>
+
+        body {
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+        }
+        .maintxt {
+            position: relative;
+        }
+
+
+        .overlay-text {
+            position: absolute;
+            padding: 150px 50px;
+            color: white;
+            align-items: center;
+            display: flex;
+            font-size:20px;
+            text-align: center;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<img class="background-image" src="../static/img/remakri2.jpg" alt="background-image"/>
+<div class="container">
+        <div class="row">
+
+                <div class="maintxt">
+
+                    <span class="overlay-text"><br><br><br>
+
+                        About GuideBard<br>
+                        At GuideBard, we firmly believe that if there's a purpose to life,
+                        it is to journey into the unknown, encounter the unfamiliar, and live the unimaginable!
+                        Our mission is to empower you, the traveller,
+                        to realise this purpose and make the most of your travel by assisting you in the best way possible.
+                        With GuideBard's local guides, you can effortlessly navigate through local languages, customs,
+                        and traditions that often make travelling to a foreign place overwhelming.
+                        We offer best selling readily booked travel itineraries,
+                        once-in-a-lifetime experiences, valuable travel advice,
+                        and the freedom to customise itineraries to ensure everything is as per your wishlist!
+                        With GuideBard by your side, there's no limit to the different ways you can discover Bangladesh!
+                        We welcome you to the GuideBard family – where every journey becomes a story worth sharing!
+                    </span>
+
+                </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
